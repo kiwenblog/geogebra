@@ -2,8 +2,7 @@ package org.geogebra.web.full.main.activity;
 
 import org.geogebra.web.full.css.MebisResources;
 import org.geogebra.web.full.css.ResourceIconProvider;
-
-import com.google.gwt.storage.client.Storage;
+import org.geogebra.web.html5.gui.util.BrowserStorage;
 
 public class MebisNotesActivity extends NotesActivity {
 
@@ -18,8 +17,7 @@ public class MebisNotesActivity extends NotesActivity {
 	}
 
 	private void markOpen(String id) {
-		Storage storage = Storage.getSessionStorageIfSupported();
-		storage.setItem("tafelOpen", id);
+		BrowserStorage.SESSION.setItem("tafelOpen", id);
 	}
 
 	@Override
