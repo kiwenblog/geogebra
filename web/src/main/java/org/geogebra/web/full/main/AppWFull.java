@@ -2145,6 +2145,15 @@ public class AppWFull extends AppW implements HasKeyboard, MenuViewListener {
 		}
 	}
 
+	private void reinitAlgebraView() {
+		GuiManagerW gm = getGuiManager();
+		DockPanel avPanel = gm.getLayout().getDockManager()
+				.getPanel(VIEW_ALGEBRA);
+		if (avPanel instanceof ToolbarDockPanelW) {
+			((ToolbarDockPanelW) avPanel).getToolbar().initGUI();
+		}
+	}
+
 	public void switchToSubapp(String subAppCode) {
 		activity = new SuiteActivity(subAppCode);
 		activity.start(this);
@@ -2154,5 +2163,6 @@ public class AppWFull extends AppW implements HasKeyboard, MenuViewListener {
 						? SymbolicMode.SYMBOLIC_AV
 						: SymbolicMode.NONE);
 		getGgbApi().setPerspective(getConfig().getForcedPerspective());
+		reinitAlgebraView();
 	}
 }

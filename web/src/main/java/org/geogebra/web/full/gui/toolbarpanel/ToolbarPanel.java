@@ -242,7 +242,7 @@ public class ToolbarPanel extends FlowPanel
 	/**
 	 * Init gui, don't open any panels
 	 */
-	private void initGUI() {
+	public void initGUI() {
 		clear();
 		addStyleName("toolbar");
 		header = new Header(this);
