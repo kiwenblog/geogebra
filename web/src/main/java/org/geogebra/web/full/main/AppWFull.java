@@ -2154,10 +2154,16 @@ public class AppWFull extends AppW implements HasKeyboard, MenuViewListener {
 		}
 	}
 
+	/**
+	 * Switch suite to the given subapp, clearing all construction, and resetting almost
+	 * all the settings
+	 * @param subAppCode "graphing", "3d", "cas" or "geometry"
+	 */
 	public void switchToSubapp(String subAppCode) {
 		activity = new SuiteActivity(subAppCode);
 		activity.start(this);
 
+		clearConstruction();
 		getKernel().setSymbolicMode(
 				GeoGebraConstants.CAS_APPCODE.equals(subAppCode)
 						? SymbolicMode.SYMBOLIC_AV

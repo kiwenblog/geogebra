@@ -244,6 +244,10 @@ public class ToolbarPanel extends FlowPanel
 	 */
 	public void initGUI() {
 		clear();
+		if (header != null) {
+			header.removeUndoRedoPanel();
+		}
+
 		addStyleName("toolbar");
 		header = new Header(this);
 		add(header);
