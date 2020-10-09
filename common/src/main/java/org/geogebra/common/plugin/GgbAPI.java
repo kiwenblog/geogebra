@@ -1559,6 +1559,14 @@ public abstract class GgbAPI implements JavaScriptAPI {
 	}
 
 	/**
+	 *
+	 * @return if construction is saved
+	 */
+	public boolean isSaved() {
+		return app.isSaved();
+	}
+
+	/**
 	 * Deletes all construction elements
 	 */
 	@Override
