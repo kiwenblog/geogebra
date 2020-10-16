@@ -431,10 +431,8 @@ var codebase = "<!--CODEBASE-->";
 			updateAppletParams();
 		}
 
-		if (window.loadUnsavedWork) {
-			if (window.loadUnsavedWork(e("ggw"))) {
-				return;
-			}
+		if (window.loadUnsavedWork && window.loadUnsavedWork(e("ggw")) {
+			return;
 		}
 
 		if (tubeid) {
