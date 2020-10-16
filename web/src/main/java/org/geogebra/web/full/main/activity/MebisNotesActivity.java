@@ -17,7 +17,7 @@ public class MebisNotesActivity extends NotesActivity {
 	}
 
 	private void markOpen(String id) {
-		BrowserStorage.SESSION.setItem("tafelOpen", id);
+		BrowserStorage.SESSION.setItem("tafelOpenDialog", id);
 	}
 
 	@Override

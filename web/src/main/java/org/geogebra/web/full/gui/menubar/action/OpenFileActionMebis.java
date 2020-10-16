@@ -1,5 +1,6 @@
 package org.geogebra.web.full.gui.menubar.action;
 
+import org.geogebra.common.main.App;
 import org.geogebra.common.move.events.BaseEvent;
 import org.geogebra.common.move.events.StayLoggedOutEvent;
 import org.geogebra.common.move.ggtapi.events.LoginEvent;
@@ -17,7 +18,8 @@ public class OpenFileActionMebis extends DefaultMenuAction<Void> implements Even
 	@Override
 	public void execute(Void item, final AppWFull app) {
 		this.app = app;
-		if (isLoggedOut()) {
+		if (isLoggedOut(app)) {
+			app.getActivity().markSearchOpen();
 			app.getLoginOperation().showLoginDialog();
 			app.getLoginOperation().getView().add(this);
 		} else {
@@ -40,7 +42,7 @@ public class OpenFileActionMebis extends DefaultMenuAction<Void> implements Even
 	/**
 	 * @return true if the whiteboard is active and the user logged in
 	 */
-	private boolean isLoggedOut() {
+	static boolean isLoggedOut(App app) {
 		return app.getLoginOperation() != null
 				&& !app.getLoginOperation().isLoggedIn();
 	}
